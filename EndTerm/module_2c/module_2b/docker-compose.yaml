@@ -1,0 +1,29 @@
+services:
+  frontend:
+    image: alpine:latest
+    container_name: web_server
+    command: sleep infinity
+    networks:
+      - frontend-net
+
+  backend:
+    image: alpine:latest
+    container_name: api_layer
+    command: sleep infinity
+    networks:
+      - frontend-net
+      - backend-net
+
+  database:
+    image: mysql:8.0
+    container_name: db_layer
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+    networks:
+      - backend-net
+
+networks:
+  frontend-net:
+    driver: bridge
+  backend-net:
+    driver: bridge

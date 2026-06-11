@@ -1,0 +1,14 @@
+services:
+  database:
+    image: mysql:8.0
+    container_name: persistent_db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: demo
+    ports:
+      - "3307:3307"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:

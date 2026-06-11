@@ -1,0 +1,10 @@
+{
+  "name": "node-ci-demo",
+  "version": "1.0.0",
+  "description": "Node.js CI/CD Demo for GHCR publishing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {}
+}
